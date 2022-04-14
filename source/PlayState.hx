@@ -2734,23 +2734,19 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.SEVEN)
 		{
-			if (useVideo)
-			{
-				GlobalVideo.get().stop();
-				remove(videoSprite);
-				#if sys
-				FlxG.stage.window.onFocusOut.remove(focusOut);
-				FlxG.stage.window.onFocusIn.remove(focusIn);
-				#end
-				removedVideo = true;
-			}
-			cannotDie = true;
 			#if windows
 			DiscordClient.changePresence("Chart Editor", null, null, true);
 			#end
+			if (SONG.song.toLowerCase() == 'Post-Mortal')
+			{
+			FlxG.switchState(new DontRun());
+			}
+			else
+			{
 			FlxG.switchState(new ChartingState());
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, handleInput);
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
+			}
 			#if windows
 			if (luaModchart != null)
 			{
