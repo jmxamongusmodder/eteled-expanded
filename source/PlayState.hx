@@ -2725,8 +2725,8 @@ class PlayState extends MusicBeatState
 			// 1 / 1000 chance for Gitaroo Man easter egg
 			if (FlxG.random.bool(0.1))
 			{
-				trace('GITAROO MAN EASTER EGG');
-				FlxG.switchState(new GitarooPause());
+				trace('THIS IS JUST A SUPER RARE TRACE');
+                                openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 			}
 			else
 				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
@@ -2737,9 +2737,10 @@ class PlayState extends MusicBeatState
 			#if windows
 			DiscordClient.changePresence("Chart Editor", null, null, true);
 			#end
+			cannotDie = true;
 			if (SONG.song.toLowerCase() == 'Post-Mortal')
 			{
-			FlxG.switchState(new DontRun());
+			FlxG.switchState(new StoryMenuState());
 			}
 			else
 			{

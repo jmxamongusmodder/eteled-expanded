@@ -20,6 +20,7 @@ class DialogueBox extends FlxSpriteGroup
 	var box:FlxSprite;
 
 	var curCharacter:String = '';
+	var isJellyMid = false; // boonus songs
 
 	var dialogue:Alphabet;
 	var fulldialogueList:Array<String> = [];
@@ -65,7 +66,6 @@ class DialogueBox extends FlxSpriteGroup
 				FlxG.sound.playMusic(Paths.music('Eteled_Cutscene_2_2', 'eteled'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.1);
 			case 'diagraphephobia':
-				
 				FlxG.sound.playMusic(Paths.music('Eteled_Cutscene_3_1', 'eteled'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.1);
 			case 'post-mortal':
@@ -259,31 +259,38 @@ class DialogueBox extends FlxSpriteGroup
 			case 'np-austin':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				boxType = 1;
 				labelType = 2;
 			case 'np-gf':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				labelType = 3;
 			case 'np-eteled':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				boxType = 1;
 				labelType = 1;
 			case 'np-bf':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 			case 'np-mystery':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				boxType = 1;
 				labelType = 5;
 			case 'none':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 			case 'mystery1':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(29, 162).loadGraphic(Paths.image('portraits/austin1', 'eteled'));
 				add(portraitLeft);
@@ -292,6 +299,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'mystery2':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(29, 162).loadGraphic(Paths.image('portraits/austin2', 'eteled'));
 				add(portraitLeft);
@@ -300,6 +308,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'austin1':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(29, 162).loadGraphic(Paths.image('portraits/austin1', 'eteled'));
 				add(portraitLeft);
@@ -308,6 +317,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'austin2':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(22, 149).loadGraphic(Paths.image('portraits/austin2', 'eteled'));
@@ -317,6 +327,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'austin3':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(0, 149).loadGraphic(Paths.image('portraits/austin3', 'eteled'));
@@ -326,6 +337,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'austin4':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(2, 164).loadGraphic(Paths.image('portraits/austin4', 'eteled'));
@@ -335,16 +347,17 @@ class DialogueBox extends FlxSpriteGroup
 			case 'austin5':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(22, 148).loadGraphic(Paths.image('portraits/austin5', 'eteled'));
 				add(portraitLeft);
 				labelType = 2;
 				boxType = 1;
-
 			case 'eteled1':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(84, 211).loadGraphic(Paths.image('portraits/eteled1', 'eteled'));
@@ -354,6 +367,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'eteled2':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(98, 235).loadGraphic(Paths.image('portraits/eteled2', 'eteled'));
@@ -363,6 +377,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'eteled3':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(74, 214).loadGraphic(Paths.image('portraits/eteled3', 'eteled'));
@@ -372,6 +387,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'eteled4':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(74, 215).loadGraphic(Paths.image('portraits/eteled4', 'eteled'));
@@ -381,6 +397,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'eteled5':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(84, 219).loadGraphic(Paths.image('portraits/eteled5', 'eteled'));
@@ -390,6 +407,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'eteled6':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(98, 282).loadGraphic(Paths.image('portraits/eteled6', 'eteled'));
@@ -399,6 +417,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'eteled7':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(98, 297).loadGraphic(Paths.image('portraits/eteled7', 'eteled'));
@@ -408,6 +427,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'eteled8':
 				portraitLeft.visible = true;
 				portraitRight.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitLeft);
 				portraitLeft = new FlxSprite(58, 275).loadGraphic(Paths.image('portraits/eteled8', 'eteled'));
@@ -417,7 +437,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'bf':
 				portraitRight.visible = true;
 				portraitLeft.visible = false;
-				
+				isJellyMid = false;
 				box.flipX = false;
 				remove(portraitRight);	
 				portraitRight = new FlxSprite(17, 274).loadGraphic(Paths.image('portraits/bf', 'eteled'));
@@ -426,11 +446,21 @@ class DialogueBox extends FlxSpriteGroup
 			case 'gf':
 				portraitRight.visible = true;
 				portraitLeft.visible = false;
+                                isJellyMid = false;
 				box.flipX = false;
 				remove(portraitRight);
 				portraitRight = new FlxSprite(894, 254).loadGraphic(Paths.image('portraits/gf', 'eteled'));
 				add(portraitRight);
 				labelType = 3;
+			case 'jellymid':
+				portraitRight.visible = true;
+				portraitLeft.visible = false;
+                                isJellyMid = true;
+				box.flipX = false;
+				remove(portraitRight);
+				portraitRight = new FlxSprite(894, 254).loadGraphic(Paths.image('portraits/jellymid', 'eteled'));
+				add(portraitRight);
+				labelType = 6;
 		}
 		
 		switch (boxType) {
@@ -486,6 +516,10 @@ class DialogueBox extends FlxSpriteGroup
 			case 5:
 				remove(charLabel);
 				charLabel = new FlxSprite(-30, 444).loadGraphic(Paths.image('labels/fuck', 'eteled'));
+				add(charLabel);
+			case 6:
+				remove(charLabel);
+				charLabel = new FlxSprite(-30, 444).loadGraphic(Paths.image('labels/jellymid', 'eteled'));
 				add(charLabel);
 		}
 	}
