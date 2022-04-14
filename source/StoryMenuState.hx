@@ -28,13 +28,17 @@ class StoryMenuState extends MusicBeatState
 	{
 		return [
 			['Dream-Of-Peace', 'Diagraphephobia', 'Post-Mortal'],
+			['Calming-Battle', 'Uh-Oh', 'One-Last-Meltdown'],
+			['Hate', 'First-One', 'One-Final-Showdown', 'Burning'],
 		];
 	}
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	public static var weekUnlocked:Array<Bool> = [];
 
 	var weekCharacters:Array<Dynamic> = [
+		['', 'bf', 'gf'],
+		['', 'bf', 'gf'],
 		['', 'bf', 'gf'],
 	];
 
@@ -346,7 +350,6 @@ class StoryMenuState extends MusicBeatState
 			PlayState.storyPlaylist = weekData()[curWeek];
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
-
 
 			PlayState.storyDifficulty = curDifficulty;
 

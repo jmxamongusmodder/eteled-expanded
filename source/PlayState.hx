@@ -248,7 +248,7 @@ class PlayState extends MusicBeatState
 
 	var funneEffect:FlxSprite;
 	var inCutscene:Bool = false;
-	var usedTimeTravel:Bool = false;
+	var usedTimeTravel:Bool = false; // what is this for?
 
 	public static var repPresses:Int = 0;
 	public static var repReleases:Int = 0;
@@ -274,6 +274,7 @@ class PlayState extends MusicBeatState
 	private var replayAna:Analysis = new Analysis(); // replay analysis
 
 	public static var highestCombo:Int = 0;
+	var isnew:Bool = false;
 
 	private var executeModchart = false;
 	var miiButtons:FlxSprite;
@@ -3608,8 +3609,8 @@ class PlayState extends MusicBeatState
 		if (!inCutscene && songStarted)
 			keyShit();
 
-		#if debug
-		if (FlxG.keys.justPressed.ONE)
+		// if debug
+		if (FlxG.keys.justPressed.ONE) // enabled it for testing purposes only.
 			endSong();
 		if (FlxG.keys.justPressed.TWO) { 
 			unspawnNotes.splice(0, unspawnNotes.length);
@@ -3629,7 +3630,7 @@ class PlayState extends MusicBeatState
 				}*/
 			});
 		}
-		#end
+		// end
 	}
 	function startEndDialogue():Void
 	{
